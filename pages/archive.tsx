@@ -5,7 +5,7 @@ import useSWR from 'swr';
 
 export async function getStaticProps() {
   const data: Array<CallObject> = await getCalls();
-  const callList = data?.filter((el) => el.is_archived === false);
+  const callList = data?.filter((el) => el.is_archived === true);
   return {
     props: {
       fallback: { '/activities': callList ?? [] },
@@ -23,7 +23,7 @@ const Home = ({ fallback }: Props) => {
   const { data, error } = useSWR(process.env.NEXT_PUBLIC_API_URL);
   const callList: Array<CallObject> | undefined = error
     ? fallback['/activities']
-    : data?.filter((el: CallObject) => el.is_archived === false);
+    : data?.filter((el: CallObject) => el.is_archived === true);
   return (
     <div className="bg-zinc-50 px-2 sm:py-4 sm:px-0">
       <ContentWrapper>

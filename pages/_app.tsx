@@ -1,8 +1,16 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
+import Layout from '../components/Layout/Layout';
+import SWRWrapper from '@/components/SWR/SWRWrapper';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <SWRWrapper>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </SWRWrapper>
+  );
 }
 
-export default MyApp
+export default MyApp;

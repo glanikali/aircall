@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# npx tsc --noEmit && npx eslint . && npx prettier --write .
+npm run pretty-quick && npm run lint
