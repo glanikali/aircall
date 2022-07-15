@@ -64,8 +64,8 @@ export default function CallDetails({ call }: { call: CallObject }) {
   };
 
   return (
-    <div className="bg-zinc-50 px-2 sm:py-4 sm:px-0">
-      <ContentWrapper>
+    <div className="bg-zinc-50 px-2 sm:py-4 sm:py-0 sm:px-0 ">
+      <ContentWrapper className="min-h-[calc(100vh_-_74px)]">
         <div className="bg-white p-4 shadow-sm rounded-lg grid gap-4">
           <div>
             {list.map((el, i) => (
